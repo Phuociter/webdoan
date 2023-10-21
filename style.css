@@ -6,7 +6,7 @@ body, html, * {
 }
 /* Top web */
 #nav {
-    background-color: #191919;
+    background-color: #102242;
 }
 
 .container {
@@ -33,13 +33,18 @@ body, html, * {
 	width: 30px;
 	height: 30px;
 	text-align: center;
-	margin: 5px;
+	margin: 10px;
 }
 
 #nav .top_nav .left i {
 	color: white;
 	font-size: 30px;
 	
+}
+
+#nav .top_nav .left i:hover{
+	color: #0eb7fa;
+	font-size: 32px;
 }
 
 #nav .top_nav .mid {
@@ -59,8 +64,13 @@ body, html, * {
 	border: none;
 	color: white;
 	font-size: 27px;
-	margin: 5px;
+	margin: 10px;
 	cursor: pointer;
+}
+
+#nav .top_nav .right button:hover{
+	color: #269fcf;
+	font-size: 29px;
 }
 
 .divider {
@@ -81,8 +91,8 @@ body, html, * {
 
 #nav .bot_nav .bot_nav_menu a {
 	text-decoration: none;
-	margin-left: 10px;
-	color: rgb(153, 151, 151);
+	margin-left: 20px;
+	color: white;
 	min-width: 60px;
 	padding-top: 10px;
 	font-size: 20px;
@@ -94,7 +104,7 @@ body, html, * {
 }
 
 #nav .bot_nav .bot_nav_menu a:hover {
-	color: #fff;
+	color: #0eb7fa;
 	font-size: 21px;
 }
 
@@ -219,14 +229,6 @@ body, html, * {
 	cursor: pointer;
 }
 
-/* #login-account,#store_location,#search_icon,#sign-up {
-	cursor: pointer;
-	font-size: 24px;
-	margin-right:5px ;
-	color: white;
-	vertical-align: middle;
-	margin:0 10px auto 10px;
-} */
 #sign_up{
 	display: none;
 	position: relative;
@@ -264,7 +266,6 @@ body, html, * {
 	border-bottom: 3px solid black;
 	font-weight: 900;
 }
-
  
 #sign_up input[type = text], input[type = password] {
 	width: auto;
@@ -523,13 +524,13 @@ body, html, * {
 	color: #000;
 }
 
-#main #page {
+#main #page_product {
     display: flex;
     justify-content: center;
     height: 40px;
 }
 
-#main #page .page_number a {
+#main #page_product .page_number a {
 	display: block;
 	width: 22px;
 	height: 22px;

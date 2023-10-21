@@ -4,7 +4,6 @@ var closeLogin = document.querySelector('.close_login');
 var clickSignUp = document.getElementById('sign_up_button');
 var signUpModal = document.getElementById('sign_up');
 var clickCloseSignUp = document.querySelector('.close_sign_up');
-var signUpModal = document.getElementById('sign_up');
 var clickProduct = document.querySelector('.card');
 var productInfo = document.querySelector('.product_info_modal');
 var clickCloseProductInfo = document.querySelector('.close_info');
@@ -60,7 +59,67 @@ function creatProduct() {
         localStorage.setItem('card',JSON.stringify(productArray));
     }
 }
+
+var content = document.getElementById('product');
+var PageProduct = document.getElementById('page_product')
+function scrollToTop() {
+    window.scroll({
+          top: 230,
+          left: 0,
+          behavior: 'smooth' // Điều này làm cho cuộn mượt hơn
+        });
+}
+function showListPageProductStranger(){
+    let numberOfPageProduct = divideProductPage('card').length; //? = 4
+    let PageProductTemp = '';
+    for(let i = 0; i < numberOfPageProduct; i++) {
+          PageProductTemp += '<button onclick="showProductStranger('+i+'),scrollToTop()">'+(i+1)+'</button>'
+    }
+    PageProduct.innerHTML = PageProductTemp;
+}
+function showProductStranger(i) {
+    showListPageProductStranger();
+    pageOfProduct = divideProductPage('card');
+    let contentTemp = '';
+    for(let j = 0; j < pageOfProduct[i].length; j++) {
+          contentTemp += '<div class="card" onclick="customAlert(\'Bạn phải đăng nhập để mua hàng\',\'warning\')"><img src="'+pageOfProduct[i][j].img+'" alt="" class="card_img"><p class="card_name">'+pageOfProduct[i][j].name+'</p><p class="card_price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
+    }
+    content.innerHTML = contentTemp;
+}
+function productDetail(productId) {
+    var productDetail = document.getElementById('product-detail');
+    modal_product_detail.style.display = 'none';
+    productDetail.style.display = 'none';
+    let productArray = JSON.parse(localStorage.getItem('product'));
+    var i;
+    for (i = 0; i < productArray.length; i++) {
+          if(productId == productArray[i].productId) break;
+    }
+    productDetail.innerHTML = '<button id="close_info_product" type="button" class="close_info">&times;</button><img src="'+productArray[i].img+'" alt=""><div class="product-detail-right"><h2>'+productArray[i].name+'</h2><h4>Giá : '+currency(productArray[i].price)+'</h4><h4>Số lượng : </h4><button class="product-quantitydown" onclick="quantitydown()">-</button><input type="text" value="1" id="quantity"><button class="product-quantityup" onclick="quantityup()">+</button><p><button id="cart-add-btn" onclick="cartAdd('+productArray[i].productId+'),closeProductDetail()">Thêm vào giỏ hàng</button></p></div>'
+    
+    modal_product_detail.style.display = 'block';
+    productDetail.style.display = 'block';
+}
+function divideProductPage(keyName) {
+    let pageOfProduct = [];
+    let productArray = JSON.parse(localStorage.getItem(keyName));
+    let pageOfProductTemp = [];
+    let dem = 0;
+    for(let i = 0; i < productArray.length; i++) {
+          pageOfProductTemp.push(productArray[i]);
+          dem++;
+          if(dem == 12) {
+                pageOfProduct.push(pageOfProductTemp);
+                pageOfProductTemp = [];
+                dem = 0;
+          }
+    }
+    pageOfProduct.push(pageOfProductTemp); //? thêm những sản phẩm còn dư khi tạo trang (VD: 26sp : 12 = 2 dư 2)
+    /* console.log(pageOfProduct); */
+    return pageOfProduct;
+}
 function init() {
+
         showlogin();
         closeByLogin();
 
@@ -69,6 +128,13 @@ function init() {
 
         buttonProductInfo();
         closeProductInfo();
+        
+        divideProductPage('card');
+        scrollToTop();
+        showListPageProductStranger();
+        showProductStranger();
+        // productDetail();
+        
 }
 
 window.onload = init;
