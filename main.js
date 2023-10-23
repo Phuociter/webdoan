@@ -40,7 +40,7 @@ function closeProductInfo(){
             productInfo.style.display = 'none';
         };
 }
-function creatProduct() {
+function createProduct() {
     if (localStorage.getItem('card') == null){
         var productArray = [
             {productID:100,img:'https://cdn.tgdd.vn/Products/Images/7264/199605/g-shock-ga-700-1adr-den-up-2-org.jpg',name:'G-SHOCK 52.5 mm Nam GA-700-1ADR',price:2114000},
@@ -54,6 +54,8 @@ function creatProduct() {
             {productID:108,img:'https://cdn.tgdd.vn/Products/Images/7264/302231/g-shock-gma-s2100ba-4adr-nu-1.jpg',name:'G-Shock 42.9 mm Nữ GMA-S2100BA-4ADR',price:2902000},
             {productID:109,img:'https://cdn.tgdd.vn/Products/Images/7264/289339/g-shock-ga-2100-1a1dr-nam-1-2.jpg',name:'G-Shock 45.4 mm Nam GA-2100-1A1DR',price:2902000},
             {productID:110,img:'https://cdn.tgdd.vn/Products/Images/7264/286412/g-shock-gm-2100-1adr-nam-2-1.jpg',name:'G-SHOCK 45.4 mm Nam GM-2100-1ADR ',price:5803000},
+            {productID:111,img:'https://cdn.tgdd.vn/Products/Images/7264/283575/g-shock-gw-a1100r-4adr-nam-2-1.jpg',name:'G-SHOCK 53.8 mm Nam GW-A1100R-4ADR ',price:16680000},
+            {productID:111,img:'https://cdn.tgdd.vn/Products/Images/7264/283575/g-shock-gw-a1100r-4adr-nam-2-1.jpg',name:'G-SHOCK 53.8 mm Nam GW-A1100R-4ADR ',price:16680000},
             {productID:111,img:'https://cdn.tgdd.vn/Products/Images/7264/283575/g-shock-gw-a1100r-4adr-nam-2-1.jpg',name:'G-SHOCK 53.8 mm Nam GW-A1100R-4ADR ',price:16680000},
         ]
         localStorage.setItem('card',JSON.stringify(productArray));
@@ -73,7 +75,7 @@ function showListPageProductStranger(){
     let numberOfPageProduct = divideProductPage('card').length; //? = 4
     let PageProductTemp = '';
     for(let i = 0; i < numberOfPageProduct; i++) {
-          PageProductTemp += '<button onclick="showProductStranger('+i+'),scrollToTop()">'+(i+1)+'</button>'
+          PageProductTemp += '<button class="page_number" onclick="showProductStranger('+i+'),scrollToTop()">'+(i+1)+'</button>'
     }
     PageProduct.innerHTML = PageProductTemp;
 }
@@ -87,19 +89,63 @@ function showProductStranger(i) {
     content.innerHTML = contentTemp;
 }
 function productDetail(productId) {
-    var productDetail = document.getElementById('product-detail');
+    var productDetail = document.getElementById('product_info');
     modal_product_detail.style.display = 'none';
     productDetail.style.display = 'none';
-    let productArray = JSON.parse(localStorage.getItem('product'));
+    let productArray = JSON.parse(localStorage.getItem('card'));
     var i;
     for (i = 0; i < productArray.length; i++) {
           if(productId == productArray[i].productId) break;
     }
-    productDetail.innerHTML = '<button id="close_info_product" type="button" class="close_info">&times;</button><img src="'+productArray[i].img+'" alt=""><div class="product-detail-right"><h2>'+productArray[i].name+'</h2><h4>Giá : '+currency(productArray[i].price)+'</h4><h4>Số lượng : </h4><button class="product-quantitydown" onclick="quantitydown()">-</button><input type="text" value="1" id="quantity"><button class="product-quantityup" onclick="quantityup()">+</button><p><button id="cart-add-btn" onclick="cartAdd('+productArray[i].productId+'),closeProductDetail()">Thêm vào giỏ hàng</button></p></div>'
+    productDetail.innerHTML = '<button type="button" class="close_info">&times;</button><img src="'+productArray[i].img+'" alt=""><div class="product-detail-right"><h2>'+productArray[i].name+'</h2><h4>Giá : '+currency(productArray[i].price)+'</h4><h4>Số lượng : </h4><button class="product-quantitydown" onclick="quantitydown()">-</button><input type="text" value="1" id="quantity"><button class="product-quantityup" onclick="quantityup()">+</button><p><button id="cart-add-btn" onclick="cartAdd('+productArray[i].productId+'),closeProductDetail()">Thêm vào giỏ hàng</button></p></div>'
     
     modal_product_detail.style.display = 'block';
     productDetail.style.display = 'block';
 }
+
+// function createSlideShowArray() {
+//     if(localStorage.getItem('slideshow') == null) {
+//           let slideShowArray = [
+//                 {slideShowID : 0, img : "https://assets.flowerstore.ph/public/tenantVN/app/assets/images/banner/UZjHB4GICYEIQIyhKajpuhHIieB6Wg9HyFg4nFy9.gif"},
+//                 {slideShowID : 1, img : "https://assets.flowerstore.ph/public/tenantVN/app/assets/images/banner/mKNNluCvJOMKjIDUzdJBDq0LKuI939qK9zJC6atr.gif"},
+//                 {slideShowID : 2, img : "https://assets.flowerstore.ph/public/tenantVN/app/assets/images/banner/9BJItFvQLCmOZaR3tYCj2hcuBpuMhlwgZ2a65R9N.gif"},
+//                 {slideShowID : 3, img : "https://assets.flowerstore.ph/public/tenantVN/app/assets/images/banner/ol989p3XImck4WQpKLC8YBbl11jaZ0x5OOz8U067.gif"},
+//                 {slideShowID : 4, img : "https://assets.flowerstore.ph/public/tenantVN/app/assets/images/banner/2PJHQer21QRAADNGJwonlV41gmCUUxTzIFKOv5ZV.gif"},
+//           ];
+//           localStorage.setItem('slideshow',JSON.stringify(slideShowArray));
+//     } 
+// }
+// var index = 0;
+// var countDown;
+// moveSlideShow();
+
+// function moveSlideShow() {
+//     let slideShow = document.getElementById('slideShow-img');
+//     let slideShowArray = JSON.parse(localStorage.getItem('slideshow'));
+    
+//     let numSlides = slideShowArray.length;
+//     if(index >= numSlides) {
+//           index = 0;
+//     } else if(index < 0) {
+//           index = numSlides - 1;
+//     }
+//     slideShow.style.display = 'block';
+//     slideShow.innerHTML = '<img src="'+slideShowArray[index].img+'" alt="">';
+//     countDown = setTimeout(function() {
+//           moveSlideShowAfter();
+//     },2000)
+// }
+// function moveSlideShowBefore() {
+//     clearTimeout(countDown);
+//     index--;
+//     moveSlideShow(index);
+// }
+// function moveSlideShowAfter() {
+//     clearTimeout(countDown);
+//     index++;
+//     moveSlideShow(index);
+// }
+
 function divideProductPage(keyName) {
     let pageOfProduct = [];
     let productArray = JSON.parse(localStorage.getItem(keyName));
@@ -118,23 +164,23 @@ function divideProductPage(keyName) {
     /* console.log(pageOfProduct); */
     return pageOfProduct;
 }
-function init() {
+// function init() {
 
-        showlogin();
-        closeByLogin();
+//         showlogin();
+//         closeByLogin();
 
-        showSignUp();
-        closeSignUp();
+//         showSignUp();
+//         closeSignUp();
 
-        buttonProductInfo();
-        closeProductInfo();
+//         buttonProductInfo();
+//         closeProductInfo();
         
-        divideProductPage('card');
-        scrollToTop();
-        showListPageProductStranger();
-        showProductStranger();
-        // productDetail();
+//         divideProductPage('card');
+//         scrollToTop();
+//         showListPageProductStranger();
+//         showProductStranger();
+//         // productDetail();
         
-}
+// }
 
-window.onload = init;
+// window.onload = init;
