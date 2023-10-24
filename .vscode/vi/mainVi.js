@@ -380,20 +380,20 @@ function showProductStranger(i) {
       pageOfProduct = divideProductPage('product');
       let contentTemp = '';
       for(let j = 0; j < pageOfProduct[i].length; j++) {
-            contentTemp += '<div class="product" onclick="customAlert(\'Bạn phải đăng nhập để mua hàng\',\'warning\')"><img src="'+pageOfProduct[i][j].img+'" alt="" class="product-img"><p class="product-name">'+pageOfProduct[i][j].name+'</p><p class="product-price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
-      }
-      content.innerHTML = contentTemp;
-}
-function showProductUser(i) {
-      
-      showListPageProductUser()
-      pageOfProduct = divideProductPage('product');
-      let contentTemp = '';
-      for(let j = 0; j < pageOfProduct[i].length; j++) {
             contentTemp += '<div class="product" onclick="productDetail('+pageOfProduct[i][j].productId+')"><img src="'+pageOfProduct[i][j].img+'" alt="" class="product-img"><p class="product-name">'+pageOfProduct[i][j].name+'</p><p class="product-price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
       }
       content.innerHTML = contentTemp;
 }
+// function showProductUser(i) {
+      
+//       showListPageProductUser()
+//       pageOfProduct = divideProductPage('product');
+//       let contentTemp = '';
+//       for(let j = 0; j < pageOfProduct[i].length; j++) {
+//             contentTemp += '<div class="product" onclick="productDetail('+pageOfProduct[i][j].productId+')"><img src="'+pageOfProduct[i][j].img+'" alt="" class="product-img"><p class="product-name">'+pageOfProduct[i][j].name+'</p><p class="product-price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
+//       }
+//       content.innerHTML = contentTemp;
+// }
 //! ADMIN 
 var content_product_table = document.getElementById('content-product-table');
 var addProductContainer = document.getElementById('addProduct-container-img');
@@ -493,8 +493,6 @@ function customAlert(message,type) {
     setTimeout(function(){ x.className = x.classList.remove("show"); }, 500);
 }
 
-
-
 function quantitydown() {
       if(quantity.value != 1) {
             quantity.value--;
@@ -514,7 +512,6 @@ function productDetail(productId) {
             if(productId == productArray[i].productId) break;
       }
       productDetail.innerHTML = '<button id="closeProductDetail" onclick="closeProductDetail()"><i class="fa-solid fa-xmark"></i></button><img src="'+productArray[i].img+'" alt=""><div class="product-detail-right"><h2>'+productArray[i].name+'</h2><h4>Giá : '+currency(productArray[i].price)+'</h4><h4>Số lượng : </h4><button class="product-quantitydown" onclick="quantitydown()">-</button><input type="text" value="1" id="quantity"><button class="product-quantityup" onclick="quantityup()">+</button><p><button id="cart-add-btn" onclick="cartAdd('+productArray[i].productId+'),closeProductDetail()">Thêm vào giỏ hàng</button></p></div>'
-      
       modal_product_detail.style.display = 'block';
       productDetail.style.display = 'block';
 }
