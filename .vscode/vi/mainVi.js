@@ -380,21 +380,21 @@ function showProductStranger(i) {
       pageOfProduct = divideProductPage('product');
       let contentTemp = '';
       for(let j = 0; j < pageOfProduct[i].length; j++) {
+            contentTemp += '<div class="product" onclick="customAlert(\'Bạn phải đăng nhập để mua hàng\',\'warning\')"><img src="'+pageOfProduct[i][j].img+'" alt="" class="product-img"><p class="product-name">'+pageOfProduct[i][j].name+'</p><p class="product-price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
+      }
+      content.innerHTML = contentTemp;
+}
+function showProductUser(i) {
+      
+      showListPageProductUser()
+      pageOfProduct = divideProductPage('product');
+      let contentTemp = '';
+      for(let j = 0; j < pageOfProduct[i].length; j++) {
             contentTemp += '<div class="product" onclick="productDetail('+pageOfProduct[i][j].productId+')"><img src="'+pageOfProduct[i][j].img+'" alt="" class="product-img"><p class="product-name">'+pageOfProduct[i][j].name+'</p><p class="product-price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
       }
       content.innerHTML = contentTemp;
 }
-// function showProductUser(i) {
-      
-//       showListPageProductUser()
-//       pageOfProduct = divideProductPage('product');
-//       let contentTemp = '';
-//       for(let j = 0; j < pageOfProduct[i].length; j++) {
-//             contentTemp += '<div class="product" onclick="productDetail('+pageOfProduct[i][j].productId+')"><img src="'+pageOfProduct[i][j].img+'" alt="" class="product-img"><p class="product-name">'+pageOfProduct[i][j].name+'</p><p class="product-price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
-//       }
-//       content.innerHTML = contentTemp;
-// }
-//! ADMIN 
+! ADMIN 
 var content_product_table = document.getElementById('content-product-table');
 var addProductContainer = document.getElementById('addProduct-container-img');
 function addProductAdmin_showIMG() {

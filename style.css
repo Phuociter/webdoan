@@ -93,37 +93,36 @@ body, html, * {
 .bot_nav_menu{
 	list-style-type: none;
 	display: flex;
+	justify-content: space-evenly ;
+	width: 95%;
 }
-
 #nav .bot_nav .bot_nav_menu li img {
 	position: relative;
-	top: -33px;
-	width: 100px;	
-	height: 100px;
+	top: -50px;
+	left: 40px;
+	width: 120px;	
+	height: 120px;
 	overflow: hidden;
 }
 
-#nav .bot_nav .bot_nav_menu a {
+#nav .bot_nav .bot_nav_menu li a {
+	position: relative;
+	top: 15px;
 	text-decoration: none;
-	margin-left: 20px;
 	color: white;
-	min-width: 60px;
-	padding-top: 10px;
 	font-size: 20px;
-	display: block;
 	text-align: center;
 	font-weight: bold;
-	height: 100%;
 	transition: 0.3s;
 }
 
-#nav .bot_nav .bot_nav_menu a:hover {
+#nav .bot_nav .bot_nav_menu li a:hover {
 	color: #0eb7fa;
 	font-size: 21px;
 }
 
 /* The Modal (background) USER */
-.user_modal{
+#user_modal{
 	display: none;
 	position: fixed;
 	top: 0;
@@ -134,18 +133,23 @@ body, html, * {
 	z-index: 10;
 }
 
-#login {
-    width: 500px;
+#login_modal {
+	/* display: none; */
+	width: 500px;
 	height: 400px;
     background-color: #fff;
     margin: 100px auto 0 auto;
     padding-bottom: 20px;
-    animation: topdown 0.7s;
     position: relative;
 	background-color:snow ;
 }
 
-#login h2 {
+/* #login_wrapper {
+	display: none;
+    
+} */
+
+#login_wrapper h2 {
 	font-family: 'Times New Roman';
 	display: inline-block;
 	margin: 20px 150px 30px 180px;
@@ -154,7 +158,7 @@ body, html, * {
 	font-weight: 900;
 }
 
-#login .close_login {
+#login_wrapper .close_login {
 	position: absolute;
 	right: 20px;
 	top: 15px;
@@ -164,16 +168,16 @@ body, html, * {
 	cursor: pointer;
 }
 
-#login .close_login:hover {
+#login_wrapper .close_login:hover {
 	color: #ddd9d9;
 }
 
-#user .login_container_info {
+#user_modal .login_container {
 	display: flex;
     justify-content: center;
 }
 
-#login label {
+#login_wrapper label {
     display: block;
     font-weight: bold;
     font-size: 13pt;
@@ -181,7 +185,7 @@ body, html, * {
     cursor: pointer;
 }
 
-#login input {
+#login_wrapper input {
     display: inline-block;
     width: 250px;
     border: 1px solid #ccc;
@@ -193,7 +197,7 @@ body, html, * {
     outline: none;
 }
 
-#login .submit_login {
+#login_wrapper .submit_login {
 	display: block;
 	margin: 40px auto;
 	width: 200px;
@@ -206,7 +210,7 @@ body, html, * {
 	
 }
 
-#login .submit_login:hover {
+#login_wrapper .submit_login:hover {
 	background-color: white;
 	color: black;
 }
@@ -219,7 +223,7 @@ body, html, * {
 	color: black;
 }
 
-#login .login_container_sign_up{
+#login_wrapper .login_container_sign_up{
 	text-decoration: underline;
 	text-align: center;
 }
@@ -233,17 +237,17 @@ body, html, * {
 	flex: 100%;
 }
 
-#login #sign_up_button{
+#login_wrapper #sign_up_button{
 	color: black;
 	padding: 10px;
 	}
 
-#login #sign_up_button:hover {
+#login_wrapper #sign_up_button:hover {
 	color: rgb(211, 8, 8);
 	cursor: pointer;
 }
 
-#sign_up{
+#sign_up_modal{
 	display: none;
 	position: relative;
 	width: 500px; 
@@ -253,11 +257,11 @@ body, html, * {
 	background-color: #fff; 
 }
 
-#sign_up .sign_up_form {
-	display: block;
-}
+/* #sign_up_modal #sign_up_wrapper {
+	display: none;
+} */
 
-#sign_up .close_sign_up {
+#sign_up_modal .close_sign_up {
 	position: absolute;
 	top: 20px;
 	right: 15px;
@@ -267,12 +271,12 @@ body, html, * {
 	cursor: pointer;
 }
 
-#sign_up .close_sign_up:hover {
+#sign_up_modal .close_sign_up:hover {
 	color: #ddd;
 	font-size: 31px;
 }
 
-#sign_up h2 {
+#sign_up_modal h2 {
 	font-family: 'Times New Roman';
 	display: inline-block;
 	margin: 20px 150px 30px 180px;
@@ -281,14 +285,14 @@ body, html, * {
 	font-weight: 900;
 }
  
-#sign_up input[type = text], input[type = password] {
+#sign_up_modal input[type = text], input[type = password] {
 	width: auto;
 	padding: 15px;
 	margin: 5px 0 20px 0;
 	display: inline-block;
 } 
 
-#sign_up input[type=text]:focus, input[type=password]:focus {
+#sign_up_modal input[type=text]:focus, input[type=password]:focus {
 	background-color: #ddd;
  	outline: none;
 }
@@ -301,7 +305,7 @@ body, html, * {
 	color: black;
 }
 
-#sign_up .sign_up_container label{
+#sign_up_modal .sign_up_container label{
 	display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -310,7 +314,7 @@ body, html, * {
 	cursor: pointer;
 }
 
-#sign_up .sign_up_container input {
+#sign_up_modal .sign_up_container input {
 	display: inline-block;
 	width: 400px;
 	border: 1px solid #d1caca;
@@ -320,7 +324,7 @@ body, html, * {
 	outline: none;
 }
 
-#sign_up #confirm_sign_up{
+#sign_up_modal #confirm_sign_up{
 	display: block;
 	margin: 40px auto;
 	width: 200px;
@@ -332,7 +336,7 @@ body, html, * {
 	border: 2px solid rgb(133, 130, 130);
 }
 
-#sign_up #confirm_sign_up:hover {
+#sign_up_modal #confirm_sign_up:hover {
 	background-color: white ;
 	color: black;
 }
@@ -358,65 +362,47 @@ body, html, * {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;	
-	padding: 10px 10px 20px 0;
+	padding: 10px 10px 10px 0;
 }
 
 
 
 .card {
+	background-color: rgb(255, 255, 255);
 	width: calc(25% - 10px);
 	height: 300px;
-	border: 1px solid#000;
+	border: 1px solid#f3e3e3;
 	text-align: center;
+	cursor: pointer;
 	margin: 10px 0px 0px 10px;
 	position: relative;
 	overflow: hidden;
-	box-shadow: 0 0 5px 5px rgba(236, 232, 232, 0.8);
+}
+.card:hover {
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .card .card_img {
-	width: 80%;
-	margin: 10px 0px 10px 0px;
-	transition: 0,4s;
-	width: 250px;
-	height: 145px;
+	width: 270px;
+    height: 240px;
 }
 
 .card .card_name,.card_price {
-	padding-bottom: 10px;
-	margin: 10px;
+	margin: 10px 0px 10px 5px;
     font-size: 15px;
     font-weight: 600;
-	transition: 0,4s;
 }
-
-#main .card:hover .card_name  {
-	font-size: 16px ;
-	cursor: pointer;
-}
-
-#main .card:hover .card_img {
-	width: 270px;
-	height: 150px;
-}
-
-#product_info {
+#main #product_detail {
+	display: none;
 	width: 100%;
 	height: 100%;
-	background-color: rgb(214, 203, 203);
+	background-color: rgba(0,0,0,0.6);
 	position: fixed;
-	display: none;
 	top: 0;
 	right: 0;
 	z-index: 10;
 	overflow-y: auto;
 }
-
-#main #product_info {
-	display: none;
-	background-color: rgba(0,0,0,0.4);
-}
-
 @keyframes topdown {
     0% {
         transform: translateY(-800px);
@@ -426,7 +412,7 @@ body, html, * {
     }
 }
 
-#product_info #infomation{
+#product_detail #infomation{
 	max-height: 550px;
 	max-width: 900px;
 	background-color: #FFFAFA;
@@ -434,11 +420,11 @@ body, html, * {
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
-	animation:topdown 0.7s;
-	z-index: 25;
+	animation:topdown 0.5s;
+	z-index: 20;
 }
 
-#product_info #infomation .close_info {
+#product_detail #infomation .close_detail {
 	position: absolute;
 	right: 15px;
 	top: 10px;
@@ -448,44 +434,44 @@ body, html, * {
 	border: none;
 }
 
-.close_info:hover{
+.close_detail:hover{
 	color: gray;
 }
 
-#product_info #infomation .left_info {
+#product_detail #infomation .left_info {
 	width: 60%;
 	text-align: center;
 }
 
-#main #product_info #infomation .left_info .img_in_info {
+#main #product_detail #infomation .left_info .img_in_info {
 	width: 100%;
 	max-width: 500px;
 	max-height: 600px;
 	
 }
 
-#main #product_info #infomation .right_info{
+#main #product_detail #infomation .right_info{
 	height: 100%;
 	width: 40%;
 }
 
-#main #product_info #infomation .right_info .product_name {
+#main #product_detail #infomation .right_info .product_name {
 	margin-top: 70px;
 	font-size: 30px;
 }
 
-#main #product_info #infomation .right_info .product_price{
+#main #product_detail #infomation .right_info .product_price{
 	font-size: 20px;
 	margin-top: 40px;
 }
 
-#main #product_info #infomation .right_info h4{
+#main #product_detail #infomation .right_info h4{
 	margin-top: 30px;
 	font-size: 15px;
 	margin-bottom: 10px;
 }
 
-#main #product_info #infomation .right_info .quantity_crease {
+#main #product_detail #infomation .right_info .quantity_crease {
 	display: inline-block;
 	font-size: 20px;
 	color: #070606;
@@ -497,7 +483,7 @@ body, html, * {
 	cursor: pointer;
 }
 
-#main #product_info #infomation .right_info #quantity {
+#main #product_detail #infomation .right_info #quantity {
 	margin-top: 0px;
 	width: 90px;
 	font-size: 20px;
@@ -507,7 +493,7 @@ body, html, * {
 	text-align: center;
 }
 
-#main #product_info #infomation .right_info .quantity_decrease {
+#main #product_detail #infomation .right_info .quantity_decrease {
 	margin-top: 7px;
 	display: inline-block;
     font-size: 20px;
@@ -520,8 +506,8 @@ body, html, * {
     cursor: pointer;
 }
 
-#main #product_info #infomation .right_info #add_cart {
-	display: block;
+#main #product_detail #infomation .right_info #add_cart {
+	/* display: block; */
 	font-size: 20px;
 	margin-top: 40px;
 	height: 50px;
@@ -533,7 +519,7 @@ body, html, * {
 	box-shadow: 0 0 5px 5px rgba(209, 206, 206, 0.8);
 }
 
-#main #product_info #infomation .right_info #add_cart:hover{
+#main #product_detail #infomation .right_info #add_cart:hover{
 	background-color: #FFFAFA;
 	color: #000;
 }
@@ -555,6 +541,7 @@ body, html, * {
 	line-height: 20px;
 	color: #f1f1f1;
 	margin-right: 10px;
+	margin-top: 10px;
 }
 
 #main #page_product .page_number:hover{

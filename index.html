@@ -74,31 +74,33 @@
 					</div>
 				</div>
 			</div>
-			<div id="user" class="user_modal">
-				<div id="login" >
-					<form>
-						<h2>ĐĂNG NHẬP</h2>
-						<button onclick="closeByLogin()" class="close_login" type="button">&times;</button>
-						<div class="login_container_info">
-							<div class="login_box">
-								<label for="username"><b>User name</b></label>
-								<input type="text" placeholder="Enter user name" id="username" name="username" required>
-				
-								<label for="password"><b>Password</b></label>
-								<input type="text" placeholder="Enter password" id="password" name="password" required>
-				
-								<button class="submit_login" type="submit">Login</button>
-							</div>		
-						</div>
-						<div class="login_container_sign_up">
-										<!-- <button type="button" class="cancelbtn">Cancel</button> -->
-							<p><a onclick="showSignUp()" id="sign_up_button" type="button" class="button_sign_up_in_login">Đăng kí</a></p>
-						</div>
-					</form>
+			<div id="user_modal">
+				<div id="login_modal">
+					<div id="login_wrapper" >
+						<form>
+							<h2>ĐĂNG NHẬP</h2>
+							<button onclick="closeUser()" class="close_login" type="button">&times;</button>
+							<div class="login_container">
+								<div class="login_box">
+									<label for="username"><b>User name</b></label>
+									<input type="text" placeholder="Enter user name" id="username" name="username" required>
+					
+									<label for="password"><b>Password</b></label>
+									<input type="text" placeholder="Enter password" id="password" name="password" required>
+					
+									<button class="submit_login" type="submit">Login</button>
+								</div>		
+							</div>
+							<div class="login_container_sign_up">
+											<!-- <button type="button" class="cancelbtn">Cancel</button> -->
+								<p><a onclick="showSignUp()" id="sign_up_button" type="button" class="button_sign_up_in_login">Đăng kí</a></p>
+							</div>
+						</form>
+					</div>
 				</div>
-				<div id="sign_up">
-					<form class="sign_up_form">
-						<button onclick="closeSignUp()" class="close_sign_up" type="button" title="close Model sign-up">&times;</button>
+				<div id="sign_up_modal">
+					<form id="sign_up_wrapper">
+						<button onclick="closeUser()" class="close_sign_up" type="button" title="close Model sign-up">&times;</button>
 							<h2>Đăng Ký</h2>
 							<div class="sign_up_container">				
 								<label for="name-sign-up"><b>Họ & Tên</b></label>
@@ -125,21 +127,21 @@
 						<div id="product">
 							<!-- JS ỏ đây -->
 						</div>
-						<div id="product_info" class="product_info_modal">
+						<div id="product_detail" onclick="productDetail()">
 							<div id="infomation">
-									<button onclick="closeProductInfo()" type="button" class="close_info">&times;</button>
+									<!-- <button onclick="closeProductDetail()" type="button" class="close_detail">&times;</button>
 									<div class="left_info">
-									<img class="img_in_info" src="https://cdn.tgdd.vn/Products/Images/7264/199605/g-shock-ga-700-1adr-den-up-2-org.jpg">
+										<img class="img_in_info"  src="https://cdn.tgdd.vn/Products/Images/7264/199605/g-shock-ga-700-1adr-den-up-2-org.jpg">
 									</div>
-								<div class="right_info">
-									<h2 class="product_name">G-SHOCK 52.5 mm Nam GA-700-1ADR</h2>
-									<h4 class="product_price">Giá: 2.114.000 đ</h4>
-									<h4>Số Lượng:</h4>
-									<button class="quantity_crease">-</button>
-									<input id="quantity" type="text" value="1">
-									<button class="quantity_decrease">+</button>
-									<button id="add_cart">Thêm vào giỏ </button>
-								</div>
+									<div class="right_info">
+										<h2 class="product_name">G-SHOCK 52.5 mm Nam GA-700-1ADR</h2>
+										<h4 class="product_price">Giá: 2.114.000 đ</h4>
+										<h4>Số Lượng:</h4>
+										<button class="quantity_crease">-</button>
+										<input id="quantity" type="text" value="1">
+										<button class="quantity_decrease">+</button>
+										<button id="add_cart">Thêm vào giỏ </button>
+									</div> -->
 							</div>
 						</div>
 						<div id="page_product">
