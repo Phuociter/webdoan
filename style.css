@@ -103,6 +103,7 @@ body, html, * {
 	width: 120px;	
 	height: 120px;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 #nav .bot_nav .bot_nav_menu li a {
@@ -110,6 +111,7 @@ body, html, * {
 	top: 15px;
 	text-decoration: none;
 	color: white;
+	cursor: pointer;
 	font-size: 20px;
 	text-align: center;
 	font-weight: bold;
