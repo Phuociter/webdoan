@@ -3,24 +3,29 @@ var userModal= document.getElementById('user_modal');
 var loginModal = document.getElementById('login_modal');
 var clickSignUp = document.getElementById('sign_up_button');
 var signUpModal = document.getElementById('sign_up_modal');
-var clickProduct = document.querySelector('.card');
+var clickProduct = document.querySelector('.product');
 var clickCloseProductInfo = document.querySelector('.close_detail');
 
+function showform() {
+    userModal.style.display = 'block';
+}
 function showlogin() {
-            userModal.style.display = 'block';
+            signUpModal.style.display = 'none';
+            loginModal.style.display = 'block';
+            
 }
 function closeUser() {
             userModal.style.display = 'none';
 }
 function showSignUp() {
-          document.getElementById('login_modal').style.display = 'none';
+          loginModal.style.display = 'none';
           signUpModal.style.display = 'block';
 }
 // function closeProductInfo(){
 //             productInfo.style.display = 'none';
 // }
 function createProduct() {
-    if (localStorage.getItem('card') == null){
+    if (localStorage.getItem('product') == null){
         var productArray = [
             {productID:100,img:'https://cdn.tgdd.vn/Products/Images/7264/199605/g-shock-ga-700-1adr-den-up-2-org.jpg',name:'Nam GA-700-1ADR',price:2114000,brand:'G-SHOCK'},
             {productID:101,img:'https://cdn.tgdd.vn/Products/Images/7264/199609/g-shock-ga-800-1adr-den-2-3-org.jpg',name:'Nam GA-800-1ADR',price:990000,brand:'G-SHOCK'},
@@ -60,10 +65,10 @@ function createProduct() {
             {productID:136,img:'https://www.vacheron-constantin.com/dam/rcq/vac/23/72/46/4/2372464.png.transform.vacprodcard.png',name:'DUAL TIME',price:800000000,brand:'VACHERON'},
 
         ]
-        localStorage.setItem('card',JSON.stringify(productArray));
+        localStorage.setItem('product',JSON.stringify(productArray));
     }
 }
-var content = document.getElementById('product');
+var content = document.getElementById('content');
 var PageProduct = document.getElementById('page_product')
 function scrollToTop() {
     window.scroll({
@@ -73,7 +78,7 @@ function scrollToTop() {
         });
 }
 function showListPageProductStranger(){
-    let numberOfPageProduct = divideProductPage('card').length; //? = 4
+    let numberOfPageProduct = divideProductPage('product').length; //? = 4
     let PageProductTemp = '';
     for(let i = 0; i < numberOfPageProduct; i++) {
           PageProductTemp += '<button class="page_number" onclick="showProductStranger('+i+'),scrollToTop()">'+(i+1)+'</button>'
@@ -82,24 +87,24 @@ function showListPageProductStranger(){
 }
 function showProductStranger(i) {
     showListPageProductStranger();
-    pageOfProduct = divideProductPage('card');
+    pageOfProduct = divideProductPage('product');
     let contentTemp = '';
     for(let j = 0; j < pageOfProduct[i].length; j++) {
-        // onclick="customAlert(\'Bạn phải đăng nhập để mua hàng\',\'warning\')" sau id="card"
-          contentTemp += '<div class="card" onclick="productDetail('+pageOfProduct[i][j].productId+')" ><img src="'+pageOfProduct[i][j].img+'" alt="" class="card_img"><p class="card_name">'+pageOfProduct[i][j].name+'</p><p class="card_price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
+        // onclick="customAlert(\'Bạn phải đăng nhập để mua hàng\',\'warning\')" sau id="product"
+          contentTemp += '<div class="product" onclick="productDetail('+pageOfProduct[i][j].productId+')" ><img src="'+pageOfProduct[i][j].img+'" alt="" class="product_img"><p class="product_name">'+pageOfProduct[i][j].name+'</p><p class="product_price">'+currency(pageOfProduct[i][j].price)+'</p></div>';
     }
     content.innerHTML = contentTemp;
 }
 function showProductsByBrand(brand) {
-    var productArray = JSON.parse(localStorage.getItem('card'));
-    var filteredProducts = productArray.filter(function (product) {
-      return product.brand === brand;
+    var productArray = JSON.parse(localStorage.getItem('product'));
+    var filteredProducts = productArray.filter(function (content) {
+      return content.brand === brand;
     });
   
     // Hiển thị sản phẩm theo brand(thương hiệu)
     var contentTemp = '';
     for (var i = 0; i < filteredProducts.length; i++) {
-      contentTemp += '<div class="card" onclick="productDetail(' + filteredProducts[i].productID + ')"><img src="' + filteredProducts[i].img + '" alt="" class="card_img"><p class="card_name">' + filteredProducts[i].name + '</p><p class="card_price">' + currency(filteredProducts[i].price) + '</p></div>';
+      contentTemp += '<div class="product" onclick="productDetail(' + filteredProducts[i].productID + ')"><img src="' + filteredProducts[i].img + '" alt="" class="product_img"><p class="product_name">' + filteredProducts[i].name + '</p><p class="product_price">' + currency(filteredProducts[i].price) + '</p></div>';
     }
     content.innerHTML = contentTemp;
   }
@@ -107,7 +112,7 @@ function showProductsByBrand(brand) {
 function productDetail(productId) {
     var productDetail = document.getElementById('product_detail');
     productDetail.style.display = 'block';
-    let productArray = JSON.parse(localStorage.getItem('card'));
+    let productArray = JSON.parse(localStorage.getItem('product'));
     var i;
     for (i = 0; i < productArray.length; i++) {
           if(productId == productArray[i].productId) break;
