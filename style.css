@@ -6,7 +6,7 @@ body, html, * {
 }
 /* Top web */
 #header {
-    background-color: #102242;
+    background-color: #143163;
 }
 
 .container {
@@ -385,7 +385,7 @@ body, html, * {
 
 
 .product {
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(230, 226, 226);
 	width: calc(25% - 10px);
 	height: 300px;
 	border: 1px solid#f3e3e3;
@@ -463,7 +463,7 @@ body, html, * {
 #main #product_detail #infomation .left_info .img_in_info {
 	width: 100%;
 	max-width: 500px;
-	max-height: 600px;
+	max-height: 550px;
 	
 }
 
