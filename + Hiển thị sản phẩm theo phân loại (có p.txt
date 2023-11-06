@@ -1,2 +1,0 @@
-+ Hiển thị sản phẩm theo phân loại (có phân trang)
-+ Hiển thị chi tiết sản phẩm
