@@ -19,7 +19,11 @@ html,
 
 /* Top web */
 #header {
+<<<<<<< HEAD
 	background-color: #143163;
+=======
+    background-color: #143163;
+>>>>>>> 0cff148b5ee5f14b5c918f9473e63ff39a63f5cc
 }
 
 .container {
@@ -476,7 +480,7 @@ input[type=password]:focus {
 
 
 .product {
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(230, 226, 226);
 	width: calc(25% - 10px);
 	height: 300px;
 	border: 1px solid#f3e3e3;
@@ -559,8 +563,13 @@ input[type=password]:focus {
 #main #product_detail #infomation .left_info .img_in_info {
 	width: 100%;
 	max-width: 500px;
+<<<<<<< HEAD
 	max-height: 600px;
 
+=======
+	max-height: 550px;
+	
+>>>>>>> 0cff148b5ee5f14b5c918f9473e63ff39a63f5cc
 }
 
 #main #product_detail #infomation .right_info {
