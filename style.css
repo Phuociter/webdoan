@@ -7,6 +7,7 @@ html,
 	font-family: sans-serif;
 }
 
+<<<<<<< HEAD
 #main-content #content-user-admin #removeUser:hover {
       background-color: #9ea6d4;
       color: white;
@@ -30,6 +31,8 @@ html,
 #customalert.show {
       visibility: visible;
 }
+=======
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 #time-now {
 	position: absolute;
 	top: 120px;
@@ -42,7 +45,15 @@ html,
 
 /* Top web */
 #header {
+<<<<<<< HEAD
 	background-color: #143163;
+=======
+<<<<<<< HEAD
+	background-color: #143163;
+=======
+    background-color: #143163;
+>>>>>>> 0cff148b5ee5f14b5c918f9473e63ff39a63f5cc
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 }
 
 .container {
@@ -137,12 +148,26 @@ html,
 	margin-left: 370px;
 }
 
+<<<<<<< HEAD
+=======
+/* #header .bot_header .bot_header_menu li img {
+	position: relative;
+	top: -50px;
+	left: 40px;
+	width: 120px;
+	height: 120px;
+	overflow: hidden;
+	cursor: pointer;
+} */
+
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 #header .bot_header .bot_header_menu li {
 	max-width: 165px;
 }
 
 #header .bot_header .bot_header_menu li a {
 	position: relative;
+<<<<<<< HEAD
     top: 5px;
     text-decoration: none;
     color: white;
@@ -152,11 +177,29 @@ html,
     font-weight: bold;
     transition: 0.15s;
     margin-left: 40px;
+=======
+	top: 5px;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	font-size: 19px;
+	text-align: center;
+	font-weight: bold;
+	transition: 0.15s;
+	margin-left: 40px;
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 }
 
 #header .bot_header .bot_header_menu li a:hover {
 	color: #0eb7fa;
+<<<<<<< HEAD
 	/* font-size: 19.05px; */
+=======
+	/* transition: 0.5s;
+	border-bottom:2px solid #0eb7fa ;
+	border-left:5px solid #0eb7fa  ; */
+	/* font-size: 20px; */
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 }
 
 /* The Modal (background) USER */
@@ -486,7 +529,7 @@ input[type=password]:focus {
 
 
 .product {
-	background-color: rgb(255, 255, 255);
+	background-color: rgb(230, 226, 226);
 	width: calc(25% - 10px);
 	height: 300px;
 	border: 1px solid#f3e3e3;
@@ -536,7 +579,11 @@ input[type=password]:focus {
 }
 
 #product_detail #infomation {
+<<<<<<< HEAD
 	max-height: 700px;
+=======
+	max-height: 550px;
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 	max-width: 900px;
 	background-color: #FFFAFA;
 	margin: 40px auto;
@@ -569,8 +616,16 @@ input[type=password]:focus {
 #main #product_detail #infomation .left_info .img_in_info {
 	width: 100%;
 	max-width: 500px;
+<<<<<<< HEAD
 	max-height: 600px;
 
+<<<<<<< HEAD
+=======
+=======
+	max-height: 550px;
+	
+>>>>>>> 0cff148b5ee5f14b5c918f9473e63ff39a63f5cc
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 }
 
 #main #product_detail #infomation .right_info {
@@ -657,7 +712,11 @@ input[type=password]:focus {
 	display: block;
 	width: 22px;
 	height: 22px;
+<<<<<<< HEAD
 	background-color: #6d9ef1;
+=======
+	background-color: #102242;
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 	border: 2px solid #2c2b2b;
 	text-decoration: none;
 	text-align: center;
@@ -667,11 +726,14 @@ input[type=password]:focus {
 	margin-top: 10px;
 }
 
+<<<<<<< HEAD
 #main #page_product .page_number a{
 	color: white;
 	text-decoration: none;
 }
 
+=======
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 #main #page_product .page_number:hover {
 	background-color: #0760fa;
 }
@@ -727,6 +789,7 @@ input[type=password]:focus {
 		top: 0;
 		opacity: 0;
 	}
+<<<<<<< HEAD
 }
 
 
@@ -1084,3 +1147,6 @@ input[type=password]:focus {
 		color: #000;
 		font-size: 16px;padding-top: 10px; 
 	}
+=======
+}
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853

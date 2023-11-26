@@ -1,5 +1,9 @@
 // Đồng hồ trang trí
+<<<<<<< HEAD
 function TimeNow() {
+=======
+function showTimeNow() {
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
       let time_now = document.getElementById('time-now');
       let date = new Date();
       /* let date_year = date.getFullYear();
@@ -29,6 +33,7 @@ function TimeNow() {
       let timeNowTemp = `${date_hour}:${date_minute}:${date_second}`;
       time_now.innerHTML = timeNowTemp;
 }
+<<<<<<< HEAD
 function showTimeNow() {
       setInterval(TimeNow,1000);
 }
@@ -68,6 +73,45 @@ function createAdmin() {
             }
       }
 }
+=======
+setInterval(showTimeNow,1000);
+// Tạo tài khoản ADMIN
+// function createAdmin() {
+//       if(localStorage.getItem('userlist') == null) {
+//             var userlist = [];
+//             var admin = {
+//                   username: 'admin',
+//                   password: 'admin',
+//                   fullname: 'Dương Văn Minh Vi',
+//                   sdt:'0772912452',
+//                   email:'dvmv2017@gmail.com',
+//                   value:100,
+//             }
+//             userlist.push(admin);
+//             localStorage.setItem('userlist',JSON.stringify(userlist));
+//       } else {
+//             var userlist = JSON.parse(localStorage.getItem('userlist'));
+//             let flag = false;
+//             for (let i = 0; i < userlist.length; i++) {
+//                   if(userlist[i].username == 'admin') {
+//                         flag = true;
+//                   }
+//             }
+//             if(flag == false) {
+//                   var admin = {
+//                         username: 'admin',
+//                         password: 'admin',
+//                         fullname: 'Dương Văn Minh Vi',
+//                         sdt:'0772912452',
+//                         email:'dvmv2017@gmail.com',
+//                         value:100,
+//                   }
+//                   userlist.push(admin);
+//                   localStorage.setItem('userlist',JSON.stringify(userlist));
+//             }
+//       }
+// }
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 // Tạo sản phẩm
 function createProduct() {
       if (localStorage.getItem('product') == null){
@@ -135,9 +179,12 @@ function logoutAdmin() {
             }, 500);
       } 
 }
+<<<<<<< HEAD
 function homepageAdmin () {
       window.location.href = "/index.html"
 }
+=======
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 var content_product_table = document.getElementById('content-product-table');
 var addProductContainer = document.getElementById('addProduct-container-img');
 function addProductAdmin_showIMG() {
@@ -162,9 +209,16 @@ showListPageProductAdmin();
 function showProductAdmin(i) {
       let productArray = JSON.parse(localStorage.getItem('product'));
       let pageOfProduct = divideProductPageAdmin(productArray);
+<<<<<<< HEAD
       var tableProduct = '<tr><th>ID</th> <th>Ảnh</th> <th>Tên sản phẩm</th> <th>Giá</th> <th>Option</th></tr>';
       for(let j = 0; j < pageOfProduct[i].length; j++) {      
             tableProduct += '<tr><td class="table-id">'+pageOfProduct[i][j].productID+'</td><td><img src="'+pageOfProduct[i][j].img+'" alt=""></td><td class="table-name">'+pageOfProduct[i][j].name+'</td><td class="table-price">'+currency(pageOfProduct[i][j].price)+'</td><td><button class="option-btn-admin" onclick="deleteProduct('+pageOfProduct[i][j].productId+')">Xóa</button><br><button class="option-btn-admin" onclick="changeProductAdmin('+pageOfProduct[i][j].productId+')">Sửa</button></td></tr>';
+=======
+      console.log(pageOfProduct[0])
+      var tableProduct = '<tr><th>ID</th> <th>Ảnh</th> <th>Tên sản phẩm</th> <th>Giá</th> <th>Option</th></tr>';
+      for(let j = 0; j < pageOfProduct[i].length; j++) {      
+            tableProduct += '<tr><td class="table-id">'+pageOfProduct[i][j].productID+'</td><td><img src="'+pageOfProduct[i][j].img+'" alt=""></td><td class="table-name">'+pageOfProduct[i][j].name+'</td><td class="table-price">'+currency(pageOfProduct[i][j].price)+'</td><td><button class="option-btn-admin" onclick="deleteProduct('+pageOfProduct[i][j].productID+')">Xóa</button><br><button class="option-btn-admin" onclick="changeProductAdmin('+pageOfProduct[i][j].productID+')">Sửa</button></td></tr>';
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
       }
       content_product_table.innerHTML = tableProduct;
       /* ------ */
@@ -177,7 +231,11 @@ function changeProductAdmin(id) {
       var addProductPrice = document.getElementById('addproduct-price');
       var i;
       for (i = 0; i < productArray.length; i++) {
+<<<<<<< HEAD
             if(productArray[i].productId == id) {
+=======
+            if(productArray[i].productID == id) {
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
                   break;
             }
       }
@@ -190,7 +248,11 @@ function addProductAdmin() {
       let flag = false;
       let productArray = JSON.parse(localStorage.getItem('product'));
       
+<<<<<<< HEAD
       var productId = productArray[(productArray.length) - 1].productId + 1;
+=======
+      var productID = productArray[(productArray.length) - 1].productID + 1;
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
       var addProductName = document.getElementById('addproduct-name');
       var addProductImg = document.getElementById('addproduct-img');
       var addProductPrice = document.getElementById('addproduct-price');
@@ -200,7 +262,11 @@ function addProductAdmin() {
             } else {
                   customAlert('Thêm sản phẩm thành công','success')
                   var productTemp = {
+<<<<<<< HEAD
                         productId:productId,
+=======
+                        productID:productID,
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
                         img:addProductImg.value,
                         name:addProductName.value,
                         price:parseInt(addProductPrice.value),
@@ -235,12 +301,20 @@ function addProductAdmin_format() {
       addProductPrice.value = '';
       addProductAdmin_showIMG()
 }
+<<<<<<< HEAD
 function deleteProduct(ProductIdDelete) {
+=======
+function deleteProduct(ProductIDDelete) {
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
       let ans = confirm("Bạn có muốn xóa sản phẩm này ?");
       if(ans == true) {
             let productArray = JSON.parse(localStorage.getItem('product'));
             for (let i = 0; i < productArray.length; i++) {
+<<<<<<< HEAD
                   if(productArray[i].productId == ProductIdDelete) {
+=======
+                  if(productArray[i].productID == ProductIDDelete) {
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
                         productArray.splice(i,1);
                   }
             }
@@ -279,7 +353,10 @@ function closecontent() {
 }
 // Đơn hàng
 function showBillAdmin() {
+<<<<<<< HEAD
       console.log('don hang')
+=======
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
       if(JSON.parse(localStorage.getItem('bill')) == null) {
             let billContent = document.getElementById('content-order-admin')
             billContent.innerHTML = '<h1 style="margin: 30px auto;">Danh sách đơn hàng</h1><h4>Không có đơn hàng</h4>'
@@ -320,10 +397,26 @@ function removeItemBill(id) {
             showBillAdmin();
       }
 }
+<<<<<<< HEAD
 let modal_bill_detail = document.getElementById('modal-billDetail');
 function showBillDetail(id) {
       let billArray = JSON.parse(localStorage.getItem('bill'));
       let billDetail = document.getElementById('billDetail');
+=======
+function billAdmincolorStatus(i) {
+      let billArray = JSON.parse(localStorage.getItem('bill'));
+      let billAdminStatus = document.getElementById('billAdmin-status');
+      if(billArray[i].status == "Chưa xử lý") {
+            billAdminStatus.style.color = "red"; 
+      } else {
+            billAdminStatus.style.color = 'blue'; 
+      }
+}
+function showBillDetail(id) {
+      let billArray = JSON.parse(localStorage.getItem('bill'));
+      let billDetail = document.getElementById('billDetail');
+
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
       /* let heightPage = document.body.offsetHeight;
       modal_bill_detail.style.height = (heightPage+1)+ 'px'; */
 
@@ -380,14 +473,22 @@ function showUserList() {
       let manageUserTemp = '<tr><th>STT</th><th>Họ tên khách hàng</th><th>Tên đăng nhập</th><th>Mật khẩu</th><th>Ngày đăng ký</th><th>Xóa</th></tr>'
 
       for (let i = 1; i < userlist.length; i++) {
+<<<<<<< HEAD
             manageUserTemp += '<tr><td>'+(i)+'</td><td>'+userlist[i].fullname+'</td><td>'+userlist[i].username+'</td><td>'+userlist[i].password+'</td><td>'+userlist[i].datesignup+'</td><td><button id="removeUser" onclick="removeUser('+i+')">Xóa</button></td></tr>'
+=======
+            manageUserTemp += '<tr><td>'+(i)+'</td><td>'+userlist[i].fullname+'</td><td>'+userlist[i].username+'</td><td>'+userlist[i].password+'</td><td>'+userlist[i].date_create+'</td><td><button id="removeUser" onclick="removeUser('+i+')">Xóa</button></td></tr>'
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
       }
       manageUser.innerHTML = '<h1 style="margin: 30px auto;">Danh sách khách hàng</h1><table border="1" id="content-order-table">'+manageUserTemp+'</table>'
 }
 function removeUser(i) {
       let ans = confirm('Bạn có chắc muốn xóa người dùng này ?');
       if(ans == true) {
+<<<<<<< HEAD
             let userlist = JSON.parse(localStorage.getItem('userlist'));
+=======
+            let userlist = JSON.parse(localStorage.getItem('user'));
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
             userlist.splice(i,1);
             localStorage.setItem('userlist',JSON.stringify(userlist));
             customAlert('Bạn đã xóa sản phẩm thành công','success');

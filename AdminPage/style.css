@@ -48,7 +48,10 @@ body {
 #navigation ul li {
       cursor: pointer;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 #button-logout-admin {
       margin: 0 10px;
       width: 100px;
@@ -73,6 +76,7 @@ body {
       display: flex;
       justify-content: space-between;
 }
+<<<<<<< HEAD
 #button-homepage-admin {
       font-size: 17px;
       transition: 0.2s;
@@ -80,6 +84,8 @@ body {
 #button-homepage-admin:hover {
       color: white;
 }
+=======
+>>>>>>> 893d260972a46d4f4508623d25814a19c6bab853
 #nav-product-admin {
       font-size: 17px;
       transition: 0.2s;
